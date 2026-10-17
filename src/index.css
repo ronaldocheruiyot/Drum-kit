@@ -1,0 +1,61 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    font-family: 'Chakra Petch', sans-serif;
+    background-color: #0B0E17;
+    color: #F1F5F9;
+  }
+}
+
+.font-pixel {
+  font-family: 'Press Start 2P', monospace;
+}
+
+.font-mono-tabular {
+  font-family: 'JetBrains Mono', monospace;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Custom 8-bit square range input styling */
+input[type="range"].pixel-slider {
+  -webkit-appearance: none;
+  appearance: none;
+  background: #1E293B;
+  height: 8px;
+  border: 2px solid #334155;
+  cursor: pointer;
+}
+
+input[type="range"].pixel-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 14px;
+  height: 20px;
+  background: #10B981;
+  border: 2px solid #0B0E17;
+  box-shadow: 2px 2px 0px #000000;
+  cursor: pointer;
+}
+
+input[type="range"].pixel-slider.amber-slider::-webkit-slider-thumb {
+  background: #F59E0B;
+}
+
+input[type="range"].pixel-slider.cyan-slider::-webkit-slider-thumb {
+  background: #06B6D4;
+}
+
+.pixel-shadow {
+  box-shadow: 3px 3px 0px #000000;
+}
+
+.pixel-shadow-sm {
+  box-shadow: 2px 2px 0px #000000;
+}
+
+.pixel-button:active {
+  transform: translate(2px, 2px);
+  box-shadow: 1px 1px 0px #000000;
+}
+

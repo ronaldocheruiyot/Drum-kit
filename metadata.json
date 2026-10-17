@@ -1,0 +1,6 @@
+{
+  "name": "BITPULSE 8-Bit Chiptune Drum Machine & Synth",
+  "description": "An 8-bit retro chiptune drum machine, 16-step sequencer, polyphonic synth, FX unit, and live waveform visualizer powered by the Web Audio API.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
