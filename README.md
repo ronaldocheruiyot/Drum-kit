@@ -1,108 +1,101 @@
 # BITPULSE-16: 8-Bit Chiptune Drum Machine & Synthesizer
 
-**BITPULSE-16** is a browser-based 8-bit retro drum machine, 16-step pattern sequencer, polyphonic chiptune synthesizer, and live CRT waveform visualizer built entirely with React, TypeScript, Tailwind CSS, and the native **Web Audio API** (zero external audio samples required).
+**BITPULSE-16** is a browser-based 8-bit retro drum machine, 16-step pattern sequencer, polyphonic chiptune synthesizer, and live CRT waveform visualizer built with React, TypeScript, Tailwind CSS, and the native **Web Audio API** (zero external audio files or API keys required).
 
 ---
 
-## Features
+## Live Demo & 1-Click Vercel Deployment
 
-### 1. 12 Synthesized 8-Bit Drum & Arcade Voices
-All percussion and arcade sound effects are synthesized in real time using Web Audio API oscillators, LFSR noise buffers, and biquad filters:
-- **Drums**: `808 Sub Kick`, `Noise Snare`, `Closed Hat`, `Open Hat`
-- **Percussion**: `8-Bit Clap`, `Square Tom`, `Dual-Oscillator 808 Cowbell`
-- **Arcade SFX**: `Arcade Laser`, `1-Up Coin`, `Pixel Jump`, `Warp Powerup`, `Boss Boom`
+Anyone can play the complete interactive version directly in their browser:
 
-### 2. 16-Step Pattern Matrix
-- **3-State Step Pads**: Click once for a normal hit (`1x`), click again for an accented hit (`2x` velocity + subtle pitch boost), and click a third time to clear.
-- **Accent Brush Mode**: Toggle one-click accent painting across steps.
-- **Per-Track Controls**: Individual pitch tuning scrubbers (`50%` to `180%`), track mute toggles, Euclidean rhythm auto-fill generators, and single-track clear buttons.
-- **Channel Category Filter**: Filter the matrix view by `ALL`, `DRUMS`, `PERC`, or `ARCADE` channels.
-- **Built-in Chiptune Presets**: Switch instantaneously between *Mega Boss Stage*, *Outrun Highway*, *Acid Dungeon 303*, and *Star Warp Zone*.
+- **Shared Cloud Preview URL (Live Now)**: [https://ais-pre-tepdboi2sanmdnca6y7dmw-622718813084.europe-west2.run.app](https://ais-pre-tepdboi2sanmdnca6y7dmw-622718813084.europe-west2.run.app)
+- **GitHub Pages Live URL** *(once pushed to your GitHub)*: `https://<your-github-username>.github.io/<your-repo-name>/`
 
-### 3. Melodic Chiptune Synthesizer & 16-Step Synth Lane
-- **8 Custom Synth Waveforms**:
-  - `NES Pulse 25%` (custom Fourier `PeriodicWave`)
-  - `Square 50%`
-  - `Sawtooth`
-  - `Triangle Bass`
-  - `Acid 303 Sweep` (resonant low-pass envelope sweep)
-  - `Vibrato Lead` (LFO pitch-modulated square lead)
-  - `2-Op FM Bell` (FM metallic chime synthesis)
-  - `Pure Sub Sine`
-- **Chiptune Arpeggiator**: Switch between `OFF`, `UP`, `DOWN`, and `OCTAVE` arpeggiation modes.
-- **Interactive 2-Octave Keyboard**: Play live via mouse or computer keyboard keys (`Z`–`M` for lower octave, `Q`–`I` for upper octave) and click steps in the `SYNTH SEQ LANE` to paint melodies.
-- **ADSR & Resonant Filter Controls**: Adjust Filter Cutoff (`Hz`), Resonance (`Q`), Attack (`ms`), Release (`ms`), and Octave (`-1`, `0`, `+1`).
+### Deploy Your Own Copy to Vercel in 1 Click
+Once you export this project to your GitHub repository, click the button below (or replace the `repository-url` parameter with your repo URL) to deploy and claim it on your Vercel account in 30 seconds:
 
-### 4. Live CRT Waveform Visualizer & Master FX Deck
-- **Real-Time Audio Analyzer**: Renders a quantized 8-bit staircase oscilloscope (`SCOPE`), frequency bar analyzer (`SPECTRUM`), or combined view (`BOTH`) at 60 FPS.
-- **Master Performance Controls**:
-  - **Tempo Slider**: `60 BPM` – `220 BPM` + **Tap Tempo** button
-  - **Swing Groove**: `0%` – `65%` 16th-note shuffle
-  - **8-Bit Crush**: Real-time amplitude quantization waveshaper
-  - **Tape Echo Mix**: Stereo feedback delay unit
-  - **Master Low-Pass Filter**: `0.4 kHz` – `16.0 kHz`
-  - **Hold: Beat Glitch**: Momentary 32nd-note beat repeat stutter effect
-  - **Randomize Beat**: Smart musical beat and pentatonic bassline generator
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new)
 
 ---
 
-## Keyboard Shortcuts
+## How to Use BITPULSE-16 (Step-by-Step User Guide)
 
-| Key | Action |
-| :--- | :--- |
-| `Space` | Start / Stop 16-Step Sequencer |
-| `Z` `S` `X` `D` `C` `V` `G` `B` `H` `N` `J` `M` | Play C3 – B3 Synth Notes |
-| `Q` `2` `W` `3` `E` `R` `5` `T` `6` `Y` `7` `U` `I` | Play C4 – C5 Synth Notes |
-| `Shift + Click` (on Step Pad) | Toggle Step Accent (`▲`) |
+### 1. Start the Beat & Switch Presets
+- Click **`Start Sequencer`** in the top-right corner (or press the **`Spacebar`** on your keyboard) to start the 16-step loop.
+- Click any of the 4 preset songs in the top navigation bar (**`Mega Boss Stage`**, **`Outrun Highway`**, **`Acid Dungeon 303`**, or **`Star Warp Zone`**) to load a full drum pattern, synth bassline, and custom patch.
+
+### 2. Program the 16-Step Drum Matrix
+- **3-State Step Pads**:
+  - **1st Click**: Normal Hit (`1x` velocity)
+  - **2nd Click**: Accented Hit (`▲` — louder `2x` velocity + slight pitch boost)
+  - **3rd Click**: Off
+- **Accent Brush**: Click **`Accent Brush: Off`** to toggle it to **`Active`**, allowing you to paint accented steps in a single click.
+- **Channel Audition & Tuning**: Click any channel label on the left (`KICK`, `SNARE`, `LASER`, `COIN`, etc.) to preview the sound, and drag the mini slider next to it to tune its pitch (`50%` to `180%`).
+- **Track Mute, Euclidean Auto-Fill & Clear**:
+  - **Speaker Icon**: Mute or unmute individual tracks live.
+  - **Sparkle Icon**: Automatically generate a mathematical **Euclidean rhythm** on that track.
+  - **Trash Icon**: Clear that single track.
+- **Category Filter**: Filter visible tracks using the **`ALL`**, **`DRUMS`**, **`PERC`**, or **`ARCADE`** buttons.
+
+### 3. Play the Chiptune Synthesizer & Paint Melodies
+- **Play Notes Live**: Click the 2-octave on-screen keyboard or press keys on your computer keyboard:
+  - **Lower Octave (`C3` – `B3`)**: `Z` `S` `X` `D` `C` `V` `G` `B` `H` `N` `J` `M`
+  - **Upper Octave (`C4` – `C5`)**: `Q` `2` `W` `3` `E` `R` `5` `T` `6` `Y` `7` `U` `I`
+- **Program the Melodic Sequencer (`SYNTH SEQ LANE`)**:
+  1. Click any key on the synth keyboard to select that note (shown under `Paint: <Note>`).
+  2. Click any of the 16 boxes in the **`SYNTH SEQ LANE`** row at the bottom of the matrix to place that note on that step. Click the same step again to clear it.
+- **8 Waveforms & Arpeggiator**:
+  - Choose between `NES Pulse 25%`, `Square 50%`, `Sawtooth`, `Triangle Bass`, `Acid 303 Sweep`, `Vibrato Lead`, `2-Op FM Bell`, and `Pure Sub Sine`.
+  - Toggle the Chiptune Arpeggiator between **`ARP: OFF`**, **`UP`**, **`DOWN`**, and **`OCTAVE`**.
+  - Shape your sound using the **Cutoff**, **Resonance**, **Attack**, **Release**, and **Octave** controls.
+
+### 4. Perform with Master FX & Live CRT Visualizer
+- **Live CRT Audio Analyzer**: Toggle between **`SCOPE`** (stepped 8-bit oscilloscope), **`SPECTRUM`** (pixel frequency bars), or **`BOTH`**.
+- **Master Controls**:
+  - **Tempo Slider & Tap Tempo**: Drag from `60 BPM` to `220 BPM`, or click **`Tap Tempo`** repeatedly to match any beat.
+  - **Swing Groove**: Add `0%` to `65%` shuffle to 16th notes.
+  - **8-Bit Crush**: Dial in authentic staircase amplitude quantization distortion.
+  - **Tape Echo Mix & Master LP Filter**: Add stereo rhythmic delay and full-mix filter sweeps.
+  - **Hold: Beat Glitch**: Press and hold for a live 32nd-note beat-repeat stutter effect.
+  - **Randomize Beat**: Instantly generate a brand-new musical drum groove and C-minor pentatonic synth line.
 
 ---
 
-## Getting Started Locally
+## How to Deploy for Free (3 Easy Ways)
 
-### Prerequisites
-- **Node.js** (v18+ recommended)
-- **npm**
+Because BITPULSE-16 runs 100% in the browser using the Web Audio API, you can host it for **free forever** on any static host.
 
-### Installation & Development
+### Option 1: GitHub Pages (Automatic via Included Workflow)
+We have included a ready-to-use GitHub Actions workflow in `.github/workflows/deploy.yml` and configured `vite.config.ts` with `base: './'`.
+1. Push this code to a public **GitHub repository** (using the **Export to GitHub** button in AI Studio or via `git push`).
+2. In your GitHub repository, go to **Settings** → **Pages**.
+3. Under **Build and deployment → Source**, select **GitHub Actions**.
+4. Every push to `main` will automatically build and publish your live app at:
+   `https://<your-username>.github.io/<your-repo-name>/`
+
+### Option 2: Vercel (1-Click Free Hosting)
+1. Push your repository to GitHub.
+2. Go to [vercel.com](https://vercel.com), sign in with GitHub, and click **Add New Project**.
+3. Import your repository — Vercel automatically detects **Vite** (`npm run build`, output folder `dist`) and gives you a free `.vercel.app` link in ~30 seconds.
+
+### Option 3: Netlify (Drag & Drop or GitHub Import)
+1. Go to [netlify.com](https://www.netlify.com) and click **Add new site → Import an existing project**.
+2. Connect your GitHub repository (Build command: `npm run build`, Publish directory: `dist`).
+
+---
+
+## Local Development
 
 ```bash
-# 1. Clone the repository
-git clone https://github.com/<your-username>/<your-repo-name>.git
-cd <your-repo-name>
-
-# 2. Install dependencies
+# 1. Install dependencies
 npm install
 
-# 3. Start the development server on port 3000
+# 2. Start local dev server (http://localhost:3000)
 npm run dev
-```
 
-### Building for Production
-
-```bash
+# 3. Build production static bundle into /dist
 npm run build
-npm run preview
 ```
-
----
-
-## Deploying to GitHub Pages
-
-To host BITPULSE-16 directly on **GitHub Pages** so anyone can play it from your repository link:
-
-1. Push your code to your GitHub repository (`main` branch).
-2. Install the `gh-pages` package (or use a GitHub Actions workflow):
-   ```bash
-   npm install -D gh-pages
-   ```
-3. Add a `deploy` script in `package.json`:
-   ```json
-   "scripts": {
-     "predeploy": "npm run build",
-     "deploy": "gh-pages -d dist"
-   }
-   ```
-4. Run `npm run deploy` and enable **GitHub Pages** under your repository's **Settings -> Pages**.
 
 ---
 
